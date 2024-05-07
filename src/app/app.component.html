@@ -5,46 +5,67 @@
       <div class="WelcomeArea">
         <h2 class="Title">Welcome back!</h2>
         <div class="DivRowSignInOrCreate">
-          <button class="buttonSignIn">Sign In</button>
-          <button (click)="hide()" class="buttonSignIn">Create User</button>
+          <button (click)="hideCreate()" class="buttonSignIn">Login</button>
+          <button (click)="hideLogin()" class="buttonSignIn">Create User</button>
         </div>
-        <div *ngIf="!isLogin" class="LoginArea">
-          <h3 class="TextEmailPassword">Username.</h3>
-          <input 
-            [(ngModel)]="name"
-            type="text" 
-            placeholder="Name"
-            class="InputLoginPassword">  
+        <div class="divComponentsLogin" *ngIf="isLogin">
+          <div class="LoginArea">
+            <h3 class="TextEmailPassword">E-mail</h3>
+            <input 
+              [(ngModel)]="nameLogin"
+              type="text" 
+              placeholder="E-mail"
+              class="InputLoginPassword">  
+          </div>
+          <div class="LoginArea">
+            <h3 class="TextEmailPassword">Password</h3>
+            <input 
+              [(ngModel)]="passwordLogin"
+              type="text" 
+              placeholder="Password"
+              class="InputLoginPassword">  
+          </div>
+          <div class="ButtonAreas">
+            <button (click)="add_user()"class="ButtonLogin">Login</button>
+          </div>
         </div>
-        <div *ngIf="!isLogin" class="LoginArea">
-          <h3 class="TextEmailPassword">Email.</h3>
-          <input 
-            [(ngModel)]="email"
-            type="text" 
-            placeholder="Email"
-            class="InputLoginPassword">  
+        <div class="divComponentsCreateUser" *ngIf="!isLogin">
+          <div class="LoginArea">
+            <h3 class="TextEmailPassword">Username.</h3>
+            <input 
+              [(ngModel)]="newName"
+              type="text" 
+              placeholder="Name"
+              class="InputLoginPassword">  
+          </div>
+          <div class="LoginArea">
+            <h3 class="TextEmailPassword">Email.</h3>
+            <input 
+              [(ngModel)]="newEmail"
+              type="text" 
+              placeholder="Email"
+              class="InputLoginPassword">  
+          </div>
+          <div class="LoginArea">
+            <h3 class="TextEmailPassword">Password.</h3>
+            <input 
+              [(ngModel)]="newPassword"
+              type="text" 
+              placeholder="Password"
+              class="InputLoginPassword">
+          </div>
+          <div class="ButtonAreas">
+            <button (click)="add_user()"class="ButtonLogin">Create User</button>
+          </div>
+        </div>  
         </div>
-        <div *ngIf="!isLogin" class="LoginArea">
-          <h3 class="TextEmailPassword">Password.</h3>
-          <input 
-            [(ngModel)]="password"
-            type="text" 
-            placeholder="Password"
-            class="InputLoginPassword">
-        </div>
-        <div *ngIf="!isLogin" class="ButtonAreas">
-          <button (click)="add_user()"class="ButtonLogin">Create User</button>
-        </div>
-      </div>
       <div class="testediv">
         <div class="divList">
         <p class="p" *ngFor="let user of users">
         &diamondsuit;User ID: <b>{{user.id}}</b> // Name: <b>{{user.Name}} // Email: {{user.Email}}</b>
       </p>
       <div style="margin: 200px;">
-      
         </div>   
-
       </div>        
       </div>
     </div>

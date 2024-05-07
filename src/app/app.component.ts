@@ -16,12 +16,14 @@ export class AppComponent {
 
   tasks:any=[];
   newtask="";
-  name="";
-  email="";
-  password="";
+  newName="";
+  newEmail="";
+  newPassword="";
   users:any=[];
   isLogin= true;
-
+  isCreate=false;
+  nameLogin="";
+  passwordLogin="";
   APIURL="http://localhost:8000/";
 
   constructor(private http:HttpClient){}
@@ -30,8 +32,13 @@ export class AppComponent {
     this.get_users();
   }
 
-  hide(){
-    this.isLogin = !this.isLogin;
+  hideCreate(){
+    this.isLogin = true;
+    this.isCreate = false;
+  }
+  hideLogin(){
+    this.isLogin=false;
+    this.isCreate=true;
   }
   
   get_tasks(){
@@ -56,14 +63,14 @@ export class AppComponent {
   }
   add_user(){
     let body= new FormData();
-    body.append('name', this.name);
-    body.append('email', this.email);
-    body.append('password', this.password);
+    body.append('name', this.newName);
+    body.append('email', this.newEmail);
+    body.append('password', this.newPassword);
     this.http.post(this.APIURL+'add_user',body).subscribe((res) => {
       alert(res)
-      this.name="";
-      this.email="";
-      this.password="";
+      this.newName="";
+      this.newEmail="";
+      this.newPassword="";
       this.get_users();
     })
   }
