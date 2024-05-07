@@ -1,0 +1,97 @@
+.divMain {
+    width: 100%;
+    height: 100%;
+    border:solid black 1px;
+}
+.divHeader {
+    margin: 10px;
+}
+.divList {
+    border: black solid 1px;
+}
+.divRow {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    column-gap: 100px;
+}
+.DivRowSignInOrCreate {
+    display: flex;
+    height: 10%;
+    justify-content: center;
+    column-gap: 2%;
+}
+.testediv {
+    height: 550px;
+    width: 550px;
+    border: black solid 1px;
+}
+.WelcomeArea {
+    background-color: #5356FF;
+    height: 550px;
+    width: 550px;
+    border: solid 2px #5356FF;
+    border-radius: 32px;
+    justify-content: center;
+    align-items: center;
+}
+.ButtonAreas{
+    height: 55px;
+    margin-left: 15%;
+    /* border: solid black 1px; */
+}
+.ButtonLogin {
+    margin-top: 10px;
+    width: 70%;
+    height: 40px;
+    border-radius: 8px;
+    border-color: #DFF5FF;
+    background-color: #5356FF;
+    color:#DFF5FF;
+}
+.buttonSignIn {
+    height: 60%;
+    width: 30%;
+    border-radius: 8px;
+    background-color:#5356FF;
+    color:#DFF5FF;
+    border-color: #DFF5FF;
+}
+.LoginArea{
+    /* border: solid black 1px; */
+    height: 17%;
+    /* margin-left: 15%; */
+    align-items: center;
+    justify-content: center;
+}
+.InputLoginPassword {
+    margin-top: 10px;
+    width: 70%;
+    height: 40px;
+    border-radius: 8px;
+    border-color: #DFF5FF;
+    background-color: #5356FF;
+    color:#DFF5FF;
+    justify-content: center;
+    align-items: center;
+}
+.InputLoginPassword::placeholder{
+    color:#DFF5FF;
+    padding-left: 5%;
+}
+.p {
+    font-size: large;
+}
+.Title {
+    text-align: center;
+    /* font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; */
+    text-decoration: underline;
+    margin-bottom: 10%;
+    color: #DFF5FF;
+}
+.TextEmailPassword{
+    /* font-family: Haettenschweiler, 'Arial Narrow Regular', sans-serif; */
+    margin-top: 0%;
+    margin-bottom: 0%;
+    color: #DFF5FF;
+}
